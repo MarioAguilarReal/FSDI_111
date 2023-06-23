@@ -8,3 +8,8 @@ app = Flask=(__name__)
 @app.route("/")
 def hello():
     return "<h1>Hello</h1>"
+
+@app.route("/products")
+def products():
+    product_list = ["apples", "Oranges", "banans"]
+    return "<h1>Hello2</h1>"
