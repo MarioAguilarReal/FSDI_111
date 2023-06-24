@@ -1,15 +1,20 @@
-#!/user/bin/env python3
-# -*- coding: utf8 -*-
-"""Sample hello world Flask App"""
+from flask import Flask             #from the flask module import the Flask class
+# OOP
 
-from flask import Flask
-app = Flask=(__name__)
 
-@app.route("/")
-def hello():
-    return "<h1>Hello</h1>"
+app = Flask(__name__)               #create an instance if flask into app ( now an object)
 
-@app.route("/products")
-def products():
-    product_list = ["apples", "Oranges", "banans"]
-    return "<h1>Hello2</h1>"
+#variables that belong to a class are called "atributtes"
+#functions that belong to a class are called "methods"
+
+@app.get("/")                       #we noe have access to the object's methods (also a decorator)
+def main():                         # A wrapped funciton is called a view fuction in flask.
+    me = {
+        "first_name": "Mario",
+        "last_name": "Aguilar",
+        "hobbies": "Go to the gym",
+        "is_active": True
+    }
+    return me               #when we return a python dictionary from a view function
+                            #flask will automatically convert it to JSON
+
